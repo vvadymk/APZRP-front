@@ -80,3 +80,31 @@ div.form-group label:first-child{
   text-transform: uppercase;
   font-size: 0.9rem;
 }
+.split {
+  height: 80%;
+  width: 50%;
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  margin-top:100px;
+}
+
+.left {
+  left: 0;
+  background-color: #111;
+}
+
+.right {
+  right: 0;
+  background-color: red;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
