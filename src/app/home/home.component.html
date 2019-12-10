@@ -2,6 +2,35 @@
   <a class="navbar-brand text-white">JWT Auth System</a>
   <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
 </nav>
+<div class="split left">
+  <div class="c">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th style="width: 30%">
+
+        </th>
+        <th style="width: 70%">
+
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of queryHistory; let i=index">
+        <td>{{i + 1}}</td>
+        <td>{{queryHistory[i].arab}}</td>
+        <td>{{queryHistory[i].roman}}</td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+
+
+      </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>
 <div class="split right">
 <form #form='ngForm' class="mb-4" autocomplete="off" (submit)="onSubmit(form)">
   <div class="form-group">

@@ -9,7 +9,7 @@ import {NgForm} from '@angular/forms';
   styles: []
 })
 export class HomeComponent implements OnInit {
-  userDetails;
+  queryHistory;
 
   formModel = {
     Arab: 2,
@@ -19,6 +19,15 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.service.formModel.reset();
+    this.service.getQuery().subscribe(
+      res => {
+        this.queryHistory = res;
+        console.log(this.queryHistory[1].arab)
+      },
+      err => {
+        console.log(err);
+      },
+    );
   }
 
 
@@ -30,7 +39,8 @@ export class HomeComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.service.query(form.value).subscribe(
       (res: any) => {
-        this.router.navigateByUrl('/home');
+        this.router.navigate(['home']);
+        window.location.reload();
       },
       err => {
         if (err.status == 400)

@@ -30,9 +30,11 @@ export class LoginComponent implements OnInit {
       },
       err => {
         if (err.status == 400)
-          console.log('a');
+          alert("Invalid login/pass")
+          //console.log('a');
         else
-          console.log(err);
+          alert("Error")
+          //console.log(err);
       }
     );
   }

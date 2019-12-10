@@ -57,4 +57,9 @@ export class UserService {
     const tokenHeader = new HttpHeaders({Authorization: 'Bearer ' + localStorage.getItem('token')})
     return this.http.post(this.BaseURI + '/UserProfile/addQuery', formData, {headers: tokenHeader} );
   }
+
+  getQuery() {
+    const tokenHeader = new HttpHeaders({Authorization: 'Bearer ' + localStorage.getItem('token')})
+    return this.http.get(this.BaseURI + '/UserProfile/getQuery',{headers: tokenHeader});
+  }
 }
